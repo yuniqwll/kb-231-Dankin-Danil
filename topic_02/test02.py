@@ -11,7 +11,7 @@ def divide(x, y):
     else:
         return "на нуль не ділиться"
 # Основна програма
-def colculator():
+def calculator():
     num1 = float(input("введіть перше число: "))
     num2 = float(input("введіть друге число: "))
     operation = input ("виберіть операцію(+, -, *, /): ")
@@ -19,12 +19,12 @@ def colculator():
     if operation == '+' :
         print(f"Результат: {add(num1, num2)}")
     elif operation == '-':
-        print(f"Результат: {add(num1, num2)}")
+        print(f"Результат: {subtract(num1, num2)}")
     elif operation =='*':
-        print(f"результат: {add(num1, num2)}")
+        print(f"результат: {multiply(num1, num2)}")
     elif operation =='/':
-        print(f"результат: {add(num1, num2)}")
+        print(f"результат: {divide(num1, num2)}")
     else:
         print("невірна операція")
 # колькулятор
-colculator()
+calculator()
