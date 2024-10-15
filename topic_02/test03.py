@@ -27,5 +27,5 @@ def calculator():
             print(f"Результат: {divide(num1, num2)}")
         case _:
             print("Невірна операція")
-# колькулятор
+# колькуляторр
 calculator()
