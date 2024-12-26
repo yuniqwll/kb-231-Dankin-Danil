@@ -34,7 +34,7 @@ def addNewElement():
     return
 
 def deleteElement():
-    name = input("Please enter name to be delated: ")
+    name = input("Please enter name to be deleted: ")
     deletePosition = -1
     for item in list:
         if name == item["name"]:
@@ -49,30 +49,28 @@ def deleteElement():
     return
 
 def updateElement():
-    name = input("Please enter name to be updated: ")
-    deletePosition = -1
-    for item in list:
-        if name == item["name"]:
-            deletePosition = list.index(item)
+    name_to_update = input("Please enter the name to be updated: ")
+    found = False
+    for student in list:
+        if student["name"] == name_to_update:
+            found = True
+            # нові дані
+            new_name = input("Please enter new name: ")
+            new_phone = input("Please enter new phone: ")
+            new_group = input("Please enter new group: ")
+            new_avarage_mark = input("Please enter new average mark: ")
+            
+            # оновлення даних
+            student["name"] = new_name
+            student["phone"] = new_phone
+            student["group"] = new_group
+            student["avarage mark"] = new_avarage_mark
+            
+            print(f"Student '{name_to_update}' has been updated to '{new_name}'.")
             break
-    if deletePosition == -1:
-        print("Element was not found")
-    else:
-        print("Delete position " + str(deletePosition))
     
-        del list[deletePosition]
-    phone = input("Please enter student phone: ")
-    group = input("please enter studentr group: ")
-    avaragemark = input("Please enter studen avarage mark: ")
-    newItem = {"name": name, "phone": phone, "group": group, "avarage mark": avaragemark}
-    insertPosition = 0
-    for item in list:
-        if name > item["name"]:
-            insertPosition += 1
-        else:
-            break
-    list.insert(insertPosition, newItem)
-    print("New element has been added")
+    if not found:
+        print(f"Student with name '{name_to_update}' not found.")
     return
 
 def main():
@@ -85,8 +83,9 @@ def main():
                 printAllList()
             case "U" | "u":
                 print("Existing element will be updated")
+                updateElement()
             case "D" | "d":
-                print("Element will be deleted")
+                print("Element will be deletped")
                 deleteElement()
             case "P" | "p":
                 print("List will be printed")
