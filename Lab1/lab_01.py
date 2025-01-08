@@ -71,6 +71,10 @@ def updateElement():
     
     if not found:
         print(f"Student with name '{name_to_update}' not found.")
+    else:
+        # Сортуємо список після оновлення
+        list.sort(key=lambda x: x["name"])
+        print("List has been re-sorted.")
     return
 
 def main():
