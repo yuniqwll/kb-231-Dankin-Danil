@@ -28,7 +28,7 @@ def infix_to_postfix(expression):
 def evaluate_postfix(postfix):
     stack = []
     ops = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv, '^': operator.pow}
-    
+    5
     for token in postfix:
         if token.isnumeric():
             stack.append(float(token))
